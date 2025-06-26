@@ -1,0 +1,27 @@
+{
+  "name": "code2flow-dev",
+
+  // ── Base image (keep the universal image) ──
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+
+  // ── Add Python + Graphviz in one line each ──
+  "features": {
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11"
+    },
+    "ghcr.io/devcontainers/features/graphviz:1": {}
+  },
+
+  // ── After the container builds, run this once ──
+  "postCreateCommand": "pip install --no-cache-dir code2flow",
+
+  // ── VS Code extensions that appear automatically ──
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+      ]
+    }
+  }
+}
